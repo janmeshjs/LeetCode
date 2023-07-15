@@ -4,22 +4,26 @@ class Solution {
         // for(int[] arr: dp){
         //     Arrays.fill(arr, -1);
         // }
+        int[] prev = new int[amount+1];
+        
         for(int i =0; i<=amount; i++){
             if(i%coins[0]==0)
-            dp[0][i]= 1;
+            prev[i]= 1;
         }
         for(int i=1; i<coins.length; i++){
+            int[] curr = new int[amount+1];
             for(int j = 0; j<=amount; j++){
-                    int notake = dp[i-1][j];
+                    int notake = prev[j];
                     int take =0;
                     if(coins[i]<=j){
-                        take = dp[i][j-coins[i]];
+                        take = curr[j-coins[i]];
                     }
-                dp[i][j]= take + notake;
+                curr[j]= take + notake;
             }
+            prev = curr;
         }
        
-        return dp[coins.length-1][amount];
+        return prev[amount];
     }
     
     public int coi(int ind, int amount, int[] coins, int[][] dp){
