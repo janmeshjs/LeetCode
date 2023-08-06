@@ -58,8 +58,3 @@ To benefit from this repository:
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-<p align="center">
-  Created with ❤️ by [Janmesh Singh](https://github.com/janmeshjs)
-</p>
-
