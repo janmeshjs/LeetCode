@@ -4,9 +4,6 @@
   <em>Collection of LeetCode questions to ace the coding interview! - Created using LeetHub</em>
 </p>
 
-<p align="center">
-  <img src="https://link-to-your-repo-logo.png" alt="Repository Logo" width="200" height="200">
-</p>
 
 <p align="center">
   <a href="#current-progress">Current Progress</a> •
@@ -63,6 +60,6 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 <p align="center">
-  Created with ❤️ by Janmesh Singh (https://github.com/janmeshjs)
+  Created with ❤️ by [Janmesh Singh](https://github.com/janmeshjs)
 </p>
 
