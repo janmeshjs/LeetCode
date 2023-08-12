@@ -25,19 +25,22 @@ class GFG {
 class Solution {
     public int editDistance(String s, String t) {
         // Code here
-        int[][] dp = new int[s.length()+1][t.length()+1];
-
-        for(int i=0; i<=s.length(); i++){
-         for(int j=0; j<=t.length(); j++){
-                if(i==0) dp[i][j] = j;
-                else if(j==0) dp[i][j] = i;
+        int[] prev = new int[t.length()+1];
+        for(int j=0; j<=t.length(); j++)prev[j] = j;
+        
+        for(int i=1; i<=s.length(); i++){
+            int[] curr = new int[t.length() + 1];
+            curr[0] = i;
+         for(int j=1; j<=t.length(); j++){
                 
-                else if(s.charAt(i-1)==t.charAt(j-1)) dp[i][j] = dp[i-1][j-1];
+                if(s.charAt(i-1)==t.charAt(j-1)) 
+                    curr[j] = prev[j-1];
                 
-                else dp[i][j]= 1+ Math.min(dp[i-1][j-1], Math.min(dp[i-1][j], dp[i][j-1]));
+                else curr[j]= 1+ Math.min(prev[j], Math.min(prev[j-1], curr[j-1]));
             }
+            prev = curr;
         }
-        return dp[s.length()][t.length()];
+        return prev[t.length()];
     }
     
     public int edit(int i, int j, String s, String t, int[][] dp) {
